@@ -10,6 +10,10 @@ import "./css/normalize.css";
 
 import Home from "./views/Home";
 
+import { DarkModeProvider } from "./context/DarkModeContext";
+
+document.querySelector('body').classList.add('bg-lightMode-bg', 'dark:bg-darkMode-bg');
+
 AOS.init({
   startEvent: 'DOMContentLoaded',
   delay: 50,
@@ -19,9 +23,13 @@ AOS.init({
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
+
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+    <DarkModeProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </DarkModeProvider>
   </BrowserRouter>
+
 );

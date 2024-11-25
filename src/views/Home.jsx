@@ -7,7 +7,7 @@ import Contact from '../components/Contact';
 
 const Home = () => {
     return (
-        <main className='max-w-2xl mx-auto my-10 space-y-8 text-lightMode-foreground dark:text-darkMode-foreground ' data-aos="fade-down">
+        <main className='max-w-2xl mx-auto my-10 space-y-8 text-lightMode-text dark:text-darkMode-foreground ' data-aos="fade-down">
             <Presentation />
             <Skills />
             <Projects />

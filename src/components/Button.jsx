@@ -1,6 +1,9 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState, forwardRef, useEffect } from "react";
 
-import useDarkMode from "../hooks/useDarkMode";
+import { useDarkMode } from "../context/DarkModeContext";
+import Icon from "./Icon";
+
+import pallete from "../assets/colors";
 
 const Button = forwardRef(
     ({ text, icon, colors, onClick, ...rest }, ref) => {
@@ -14,27 +17,36 @@ const Button = forwardRef(
             }, 120);
         };
 
-        const [isDarkMode] = useDarkMode();
 
-        const defaultPrimaryColor =
-            isDarkMode ? "#E2E8F0" : "#334155"; // foreground
-        const defaultSecundaryColor =
-            isDarkMode ? "#0F172A" : "#FAFBFD"; // bg
+        const { darkMode: isDarkMode } = useDarkMode();
+        /*
+        Primary: es para el texto, borde y sombra.
+        Secundary: es para el fondo.
+        */
+        const [primaryColor, setPrimaryColor] = useState("");
+        const [secundaryColor, setSecundaryColor] = useState("");
 
-        const primaryColor = colors?.primaryColor || defaultPrimaryColor;
-        const secundaryColor = colors?.secundaryColor || defaultSecundaryColor;
+        useEffect(() => {
+            //si no hay colores, se asignan los colores por defecto
+            const primaryColor = isDarkMode ? (colors ? colors.primary_dark : pallete.darkMode.foreground) : (colors ? colors.primary_light : pallete.lightMode.foreground);
+            const secundaryColor = isDarkMode ? (colors ? colors.secundary_dark : pallete.darkMode.bg) : (colors ? colors.secundary_light : pallete.lightMode.bg);
+
+            setPrimaryColor(primaryColor);
+            setSecundaryColor(secundaryColor);
+        }, [isDarkMode]);
+
 
         return (
-            <div className="relative w-fit h-full">
+            <div className="relative">
                 <button
                     ref={ref}
-                    className={`${isClicked ? "transform translate-y-1" : ""} relative z-10 cursor-pointer border-2 rounded-md p-2 flex items-center justify-center transition-all duration-200`}
+                    className={`${isClicked ? "transform translate-y-1" : ""} min-w-10 min-h-10 text-sm font-bold relative z-10 cursor-pointer border-2 rounded-lg p-2 flex items-center justify-center transition-transform duration-200 shadow`}
                     onClick={handleClick}
                     style={
                         {
                             backgroundColor: secundaryColor,
                             borderColor: primaryColor,
-                            color: secundaryColor
+                            color: primaryColor,
                         }
                     }
                     {...rest}
@@ -42,15 +54,15 @@ const Button = forwardRef(
                     <div className="flex items-center gap-2">
                         {text}
                         {icon && (
-                            <img src={`/icons/${icon}.svg`} className="w-4 h-4" alt="icon" />
+                            <Icon id={icon} color={primaryColor} className={"w-4 h-4"} />
                         )}
                     </div>
                 </button>
                 {/* Efecto de fondo */}
-                <div className={`absolute top-1 left-0 w-full h-full rounded-md`}
+                <div className={`absolute top-1 left-0 w-full h-full rounded-lg`}
                     style={
                         {
-                            backgroundColor: primaryColor
+                            backgroundColor: primaryColor,
                         }
                     } />
             </div >
