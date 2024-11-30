@@ -1,12 +1,9 @@
 import React from "react";
-
+import SectionHeader from "./SectionHeader";
 const Skills = () => (
     <section className="tiny-content">
-        <h2 className="section_h2">
-            <div className="texto-icono">
-                Experiencia / Habilidades<i className="icon icon-gear primary-dark"></i>
-            </div>
-        </h2>
+        <SectionHeader text="Experiencia / Habilidades" icon="gear" />
+
         <ul className="skills">
             <li>Dashboards Admin. Manejo de todo el CRUD.</li>
             <li>Flujo de creación de usuarios, con JWT.</li>

@@ -1,48 +1,24 @@
 import React from "react";
 
+import Button from "./Button";
+import SectionHeader from "./SectionHeader";
+
 const Contact = () => (
     <section className="tiny-content">
-        <h2 className="section_h2">
-            <div className="texto-icono">
-                Contacto <i className="icon icon-envelope primary-dark"></i>
+        <SectionHeader text="Contacto" icon="mailbox-flag-up" />
+        <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center gap-2">
+                {/* TODO */}
+                <Button icon="copy" buttonType="normal" text=" marianofrank@hotmail.com" />
+
+                <Button icon="paper-plane" buttonType="normal" href="mailto:marianofrank@hotmail.com" />
             </div>
-        </h2>
-        <div className="contacto_grid">
-            <div className="correo">
-                <div className="btn-ct" id="copy">
-                    <button className="btn">
-                        <div className="texto-icono">
-                            marianofrank@hotmail.com<i className="icon icon-copy"></i>
-                        </div>
-                    </button>
-                    <div className="btn-bg"></div>
-                </div>
-                <div className="btn-ct" data-tippy-content="Envíame un mail">
-                    <a className="btn btn-icon" href="mailto:marianofrank@hotmail.com">
-                        <i className="icon icon-paper-plane"></i>
-                    </a>
-                    <div className="btn-bg"></div>
-                </div>
-            </div>
-            <div className="redes_sociales">
-                <div className="btn-ct">
-                    <a href="https://www.instagram.com/marian_002" className="btn btn-icon" target="_blank">
-                        <i className="fa-brands fa-instagram"></i>
-                    </a>
-                    <div className="btn-bg"></div>
-                </div>
-                <div className="btn-ct">
-                    <a href="https://www.linkedin.com/in/frankmariano/" className="btn btn-icon" target="_blank">
-                        <i className="fa-brands fa-linkedin"></i>
-                    </a>
-                    <div className="btn-bg"></div>
-                </div>
-                <div className="btn-ct">
-                    <a href="https://github.com/MarianoFrank" className="btn btn-icon" target="_blank">
-                        <i className="fa-brands fa-github"></i>
-                    </a>
-                    <div className="btn-bg"></div>
-                </div>
+            <div className="flex justify-between items-center gap-2">
+                {/* TODO Instagram */}
+
+                <Button iconFa="fa-brands fa-github" buttonType="normal" />
+
+                <Button iconFa="fa-brands fa-linkedin" buttonType="normal" />
             </div>
         </div>
     </section>

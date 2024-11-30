@@ -1,13 +1,11 @@
 import React from "react";
 
+import IconCompound from "./IconCompound";
+import pallete from "../assets/colors";
+import SectionHeader from "./SectionHeader";
 const Projects = () => (
     <section className="tiny-content">
-        <h2 className="section_h2">
-            <div className="texto-icono">
-                Projects <i className="icon icon-folder-open primary-dark"></i>
-            </div>
-            <i className="icon icon-circle-info" data-tippy-content="Pronto subiré más proyectos 🔨"></i>
-        </h2>
+        <SectionHeader text="Proyectos" icon="folder-open" />
         <div className="project">
             <div className="project_ilustration">
                 <picture className="project-picture">

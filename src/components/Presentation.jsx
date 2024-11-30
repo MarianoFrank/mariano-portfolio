@@ -1,12 +1,10 @@
 import React from "react";
 import Tippy from '@tippyjs/react';
 
-
 import Button from "./Button";
 
 import { useDarkMode } from "../context/DarkModeContext";
 
-import colors from "../assets/colors";
 
 const Presentation = () => {
 
@@ -31,17 +29,11 @@ const Presentation = () => {
         </p>
         <div className="flex gap-2">
             <Button
-                onClick={toggleDarkMode} icon="moon-over-sun" />
+                onClick={toggleDarkMode} icon="moon-over-sun" buttonType="normal" />
 
             <Tippy content="Descargar 💾">
                 <Button text="Curriculum"
-                    onClick={handleDownload} icon="file-user" colors={{
-                        primary_light: colors.lightMode.primary,
-                        secundary_light: colors.lightMode.primary_light,
-
-                        primary_dark: colors.darkMode.primary,
-                        secundary_dark: colors.darkMode.primary_light
-                    }} />
+                    onClick={handleDownload} icon="file-user" buttonType="special" />
             </Tippy>
         </div>
     </section>
