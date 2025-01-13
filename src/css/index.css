@@ -45,20 +45,3 @@
     background-color: #1e1e2e; /* Color de la pista en modo oscuro */
   }
 }
-
-/* Tema Catppuccin para Tippy.js */
-.tippy-box[data-theme~="catppuccin"] {
-  background-color: #eff1f5;
-  color: #4c4f69;
-  border: 1px solid #bcc0cc; /* Surface 1 */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.dark .tippy-box[data-theme~="catppuccin"] {
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-  border: 1px solid #45475a;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}

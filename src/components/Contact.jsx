@@ -1,8 +1,7 @@
 import React from "react";
-
+import Tooltip from "./Tooltip";
 import Button from "./Button";
 import SectionHeader from "./SectionHeader";
-import Tippy from "@tippyjs/react";
 
 
 const Contact = () => {
@@ -26,14 +25,17 @@ const Contact = () => {
                     <div onMouseLeave={() => setTimeout(() => {
                         setIsCopiedMsg("Copiar 📋")
                     }, 200)}>
-                        <Tippy content={isCopiedMsg} hideOnClick={false} theme="catppuccin" arrow={false}>
+
+                        <Tooltip content={isCopiedMsg} >
                             <Button icon="copy" onClick={copyToClipboard} buttonType="normal" text=" marianofrank@hotmail.com" />
-                        </Tippy>
+                        </Tooltip>
                     </div>
 
-                    <Tippy content="Enviame un mail 📬" theme="catppuccin" arrow={false}>
+
+                    <Tooltip content="Enviame un mail 📬" >
                         <Button icon="paper-plane" buttonType="normal" onClick={() => window.open("mailto:marianofrank@hotmail.com", "_blank")} />
-                    </Tippy>
+                    </Tooltip>
+
 
                 </div>
                 <div className="flex justify-between items-center gap-2">

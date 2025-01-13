@@ -1,9 +1,8 @@
 import React from "react";
-import Tippy from '@tippyjs/react';
 import ReactTypingEffect from 'react-typing-effect';
 import useColor from "../hook/useColors";
 import Button from "./Button";
-
+import Tooltip from "./Tooltip";
 import { useDarkMode } from "../context/DarkModeContext";
 
 
@@ -59,12 +58,14 @@ const Presentation = () => {
             <Button
                 onClick={toggleDarkMode} icon="moon-over-sun" buttonType="normal" />
 
-            <Tippy content="Descargar 💾" theme="catppuccin" arrow={false}>
+
+            <Tooltip content="Descargar 💾" >
                 <Button text="Curriculum"
                     onClick={handleDownload} icon="file-user" buttonType="special" />
-            </Tippy>
+            </Tooltip>
+
         </div>
-    </section>
+    </section >
     );
 };
 

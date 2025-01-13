@@ -8,6 +8,7 @@ import { useDarkMode } from "../context/DarkModeContext";
 import Button from '../components/Button';
 import { useNavigate } from "react-router";
 import SectionHeader from '../components/SectionHeader';
+import Tooltip from '../components/Tooltip';
 
 //Swiper
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -55,7 +56,9 @@ const ProjectPage = () => {
                         <Button onClick={() => navigate("/")} icon="arrow-left" text="Volver" buttonType="normal" invertIcon={true} />
                         <Button onClick={toggleDarkMode} icon="moon-over-sun" buttonType="normal" />
                     </div>
-                    <Button iconFa="fa-brands fa-github" buttonType="special" text={`${project.name}`} onClick={() => window.open(`${project.github}`)} url={project.github} />
+                    <Tooltip content="Ver en GitHub">
+                        <Button iconFa="fa-brands fa-github" buttonType="special" text={`${project.name}`} onClick={() => window.open(`${project.github}`)} url={project.github} />
+                    </Tooltip>
                 </div>
             </header>
 
