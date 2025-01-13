@@ -3,10 +3,19 @@ import React, { useState, forwardRef } from "react";
 import IconCompound from "./IconCompound";
 
 import useColor from "../hook/useColors";
-import { useDarkMode } from "../context/DarkModeContext"
+
+/* 
+Format Colors
+    colors:{
+        dark-primary: "#000",
+        dark-secundary: "#000",
+        light-primary: "#fff",
+        light-secundary: "#fff",
+    }
+*/
 
 const Button = forwardRef(
-    ({ text, icon, iconFa, buttonType, onClick, iconClassName, ...rest }, ref) => {
+    ({ text, icon, iconFa, buttonType, onClick, iconClassName, colors, invertIcon = false, url, ...rest }, ref) => {
         const [isClicked, setIsClicked] = useState(false);
         const [isHovered, setIsHovered] = useState(false);
         const handleClick = () => {
@@ -14,52 +23,55 @@ const Button = forwardRef(
             if (onClick) onClick();
             setTimeout(() => {
                 setIsClicked(false);
-            }, 120);
+            }, 200);
         };
 
-        const { primaryColor, secundaryColor } = useColor(buttonType);
+        const { primaryColor, secundaryColor } = useColor(buttonType, colors);
 
-        const { darkMode: isDarkMode } = useDarkMode();
-        console.log(isDarkMode)
         return (
-            <div className="relative shadow rounded-lg block w-fit">
-                <button
-                    ref={ref}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                    className={`${isClicked ? "transform translate-y-1" : ""}   min-w-10 min-h-10 text-sm font-bold relative z-10 cursor-pointer border-2 rounded-lg p-2 flex items-center justify-center transition-transform-shadow duration-200 ease-out `}
-                    onClick={handleClick}
 
-                    style={
-                        {
-                            backgroundColor: secundaryColor,
-                            borderColor: primaryColor,
-                            color: primaryColor,
-                            //Ya vere si le dejo esto, no me convence
-                            //boxShadow: isHovered ? `0 0 4px 0 ${primaryColor}` : "none",
+            <a href={url} onClick={(e) => e.preventDefault()}>
+                <div className="relative shadow-md rounded-lg block w-fit">
+                    <button
+                        ref={ref}
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                        className={`transition-all duration-100 ease-in-out  ${isClicked ? "translate-y-[0.2rem] " : ``}   min-w-10 min-h-10 text-sm font-bold relative z-10 cursor-pointer border-2 rounded-lg p-2 flex items-center justify-center transition-transform-shadow `}
+                        onClick={handleClick}
+
+                        style={
+                            {
+                                backgroundColor: secundaryColor,
+                                background: secundaryColor,
+                                borderColor: primaryColor,
+                                color: colors && colors.text ? colors.text : primaryColor,
+                                //Ya vere si le dejo esto, no me convence
+                                //boxShadow: isHovered ? `0 0 4px 0 ${primaryColor}` : "none",
+                            }
                         }
-                    }
-                    {...rest}
-                >
-                    <div className="flex items-center gap-2 h-4 w-fit"
+                        {...rest}
                     >
-                        {text}
-                        {icon && (
-                            <IconCompound id={icon} color={primaryColor} />
-                        )}
-                        {iconFa && (
-                            <i className={iconFa} style={{ color: primaryColor }} />
-                        )}
-                    </div>
-                </button>
-                {/* Efecto de fondo */}
-                <div className={`absolute top-1 left-0 w-full h-full rounded-lg shadow-md brightness-75`}
-                    style={
-                        {
-                            backgroundColor: primaryColor,
-                        }
-                    } />
-            </div >
+                        <div className={`flex items-center gap-2 h-4 w-fit ${invertIcon ? 'flex-row-reverse' : 'flex-row'}`}
+                        >
+                            {text}
+                            {icon && (
+                                <IconCompound id={icon} color={colors && colors.text ? colors.text : primaryColor} />
+                            )}
+                            {iconFa && (
+                                <i className={iconFa} style={{ color: colors && colors.text ? colors.text : primaryColor }} />
+                            )}
+                        </div>
+                    </button>
+                    {/* Efecto de fondo */}
+                    {/* brightness-75 nose si dejarlo */}
+                    <div className={`absolute top-[0.2rem] left-0 w-full h-full rounded-lg`}
+                        style={
+                            {
+                                backgroundColor: primaryColor,
+                            }
+                        } />
+                </div >
+            </a>
         );
     }
 );

@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  p {
+    @apply text-lightMode-text; /* Estilo para el modo claro */
+    font-weight: 400;
+  }
+
+  /* Estilos para el modo oscuro */
+  .dark p {
+    @apply text-darkMode-text; /* Color de texto blanco en modo oscuro */
+  }
+
+  /* Personalización de la barra de desplazamiento */
+  ::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #04a5e5; /* Color del thumb (parte que se mueve) */
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #4c4f69; /* Color del thumb cuando el mouse pasa sobre él */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #eff1f5; /* Color de la pista de la barra de desplazamiento */
+    border-radius: 4px;
+  }
+
+  /* Estilos para la barra de desplazamiento en el modo oscuro */
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: #89dceb; /* Color del thumb en modo oscuro */
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background-color: #cdd6f4; /* Color del thumb cuando el mouse pasa sobre él */
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background-color: #1e1e2e; /* Color de la pista en modo oscuro */
+  }
+}
+
+/* Tema Catppuccin para Tippy.js */
+.tippy-box[data-theme~="catppuccin"] {
+  background-color: #eff1f5;
+  color: #4c4f69;
+  border: 1px solid #bcc0cc; /* Surface 1 */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .tippy-box[data-theme~="catppuccin"] {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  border: 1px solid #45475a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}

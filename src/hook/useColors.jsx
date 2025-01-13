@@ -28,14 +28,20 @@ const useColor = (type = "normal", colors) => {
                 : pallete.lightMode.primary_light;
         }
         else if (type === "custom") {
-            //el objeto colors pasado como parametro debera tener los 4 colores 
+
             primaryColor = isDarkMode
-                ? colors.darkMode.primary
-                : colors.lightMode.primary;
+                ? colors.primary
+                : colors.secundary;
 
             secundaryColor = isDarkMode
-                ? colors.darkMode.primary_light
-                : colors.lightMode.primary_light;
+                ? colors.secundary
+                : colors.primary;
+        }
+        else if (type === "instagram") {
+            //caso especial 
+            primaryColor = isDarkMode ? "#E669B6" : "#cc32b2";
+            secundaryColor = "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)";
+
         }
 
         setPrimaryColor(primaryColor);

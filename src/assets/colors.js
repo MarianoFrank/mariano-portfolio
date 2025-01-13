@@ -1,16 +1,17 @@
 export default {
     lightMode: {
-        primary: "#6366F1",
-        primary_light: "#D7E1FF",
-        bg: "#FAFBFD",
-        foreground: "#334155",
-        text: "#334155"
+        primary: "#04a5e5",
+        primary_light: "#d2ebf7",
+        bg: "#eff1f5",
+        foreground: "#4c4f69",
+        text: "#4c4f69"
     },
     darkMode: {
-        primary: "#38BDF8",
-        primary_light: "#1A4565",
-        bg: "#0F172A",
-        foreground: "#E2E8F0",
-        text: "#94A3B8"
+        primary: "#89dceb",
+        primary_light: "#134e68",
+        bg: "#1e1e2e",
+        foreground: "#cdd6f4",
+        text: "#cdd6f4"
     }
 }
+

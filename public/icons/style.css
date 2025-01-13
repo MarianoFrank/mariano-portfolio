@@ -26,6 +26,49 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-image-polaroid .path1:before {
+  content: "\e91c";
+
+  opacity: 0.4;
+}
+.icon-image-polaroid .path2:before {
+  content: "\e91d";
+
+  margin-left: -0.875em;
+}
+
+.icon-code .path1:before {
+  content: "\e918";
+
+  opacity: 0.4;
+}
+.icon-code .path2:before {
+  content: "\e919";
+
+  margin-left: -1.25em;
+}
+.icon-memo-circle-info .path1:before {
+  content: "\e91a";
+
+  opacity: 0.4;
+}
+.icon-memo-circle-info .path2:before {
+  content: "\e91b";
+
+  margin-left: -1.125em;
+}
+
+.icon-up-right-from-square .path1:before {
+  content: "\e916";
+
+  opacity: 0.4;
+}
+.icon-up-right-from-square .path2:before {
+  content: "\e917";
+
+  margin-left: -1em;
+}
+
 .icon-mailbox-flag-up .path1:before {
   content: "\e914";
 

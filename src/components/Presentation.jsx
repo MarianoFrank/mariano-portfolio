@@ -1,6 +1,7 @@
 import React from "react";
 import Tippy from '@tippyjs/react';
-
+import ReactTypingEffect from 'react-typing-effect';
+import useColor from "../hook/useColors";
 import Button from "./Button";
 
 import { useDarkMode } from "../context/DarkModeContext";
@@ -8,6 +9,8 @@ import { useDarkMode } from "../context/DarkModeContext";
 
 const Presentation = () => {
 
+
+    const { primaryColor, secundaryColor } = useColor("special");
     const { toggleDarkMode } = useDarkMode();
 
     const handleDownload = () => {
@@ -17,11 +20,36 @@ const Presentation = () => {
         link.click();
     };
 
-    return (<section className="space-y-4">
-        <h1>
-            Hola, soy&nbsp;
-            <span typing-speed="100" typing-delay-write="200" typing-delay-remove="1500" words="Mariano, :D "></span>
-        </h1>
+    return (<section className="space-y-6">
+
+        <ReactTypingEffect
+            className="m-0 p-0"
+            text={["soy Mariano", "Bienvenido", ":D"]}
+            cursorRenderer={cursor => <h1 className="m-0 p-0">{cursor}</h1>}
+            speed={200}
+            eraseDelay={600}
+            eraseSpeed={100}
+            typingDelay={200}
+
+            displayTextRenderer={(text, i) => {
+                return (
+                    <h1 className="m-0 p-0 font-extrabold">
+                        Hola, {' '}
+                        {text.split('').map((char, i) => {
+                            const key = `${i}`;
+                            return (
+                                <span
+                                    key={key}
+                                    style={{ color: primaryColor }}
+                                    className="m-0 p-0"
+                                >{char}</span>
+                            );
+                        })}
+                    </h1>
+                );
+            }}
+        />
+
         <p>
             Un desarrollador web full stack y estudiante de ingeniería en sistemas
             Argentino 🇦🇷. Creo soluciones eficientes sin descuidar la estética, me
@@ -31,7 +59,7 @@ const Presentation = () => {
             <Button
                 onClick={toggleDarkMode} icon="moon-over-sun" buttonType="normal" />
 
-            <Tippy content="Descargar 💾">
+            <Tippy content="Descargar 💾" theme="catppuccin" arrow={false}>
                 <Button text="Curriculum"
                     onClick={handleDownload} icon="file-user" buttonType="special" />
             </Tippy>
