@@ -11,31 +11,23 @@ const pageTransition = {
 };
 
 const variants = {
-    initial: (direction) => ({
-        y: direction > 0 ? "100%" : "-100%",
-    }),
-    animate: {
-        y: 0,
-        transition: pageTransition,
+    initial: {
+        opacity: 0,
     },
-    exit: (direction) => ({
-        y: direction > 0 ? "-100%" : "100%",
+    animate: {
         transition: pageTransition,
-    }),
+        opacity: 1,
+    },
+    exit: {
+        transition: pageTransition,
+        opacity: 0,
+    },
 };
 
 function RoutesWithAnimation() {
     const location = useLocation();
 
-    const [direction, setDirection] = useState(1);
-
     useEffect(() => {
-        //esto lo hago asi porque solo tengo dos rutas
-        if (location.pathname.includes("/project")) {
-            setDirection(-1);
-        } else {
-            setDirection(1);
-        }
         const savedScrollPosition = sessionStorage.getItem("scrollPosition");
         if (savedScrollPosition && location.pathname === "/") {
             const homeElement = document.getElementById('home');
@@ -47,48 +39,47 @@ function RoutesWithAnimation() {
 
 
     return (
-        <div className='relative w-screen h-screen overflow-hidden'>
-            <AnimatePresence mode="sync" initial={false}>
-                <Routes location={location} key={location.pathname}>
-                    <Route
-                        path="/"
-                        element={
-                            <motion.div
-                                variants={variants}
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                                custom={direction}
-                                className={`absolute top-0 left-0 w-full h-full overflow-y-auto`}
-                                onScroll={(e) => {
-                                    // Guardar la posición del scroll al cambiar de ruta
-                                    const scrollTop = e.target.scrollTop;
-                                    sessionStorage.setItem("scrollPosition", scrollTop);
-                                }}
-                                id='home'
-                            >
-                                <Home />
-                            </motion.div>
-                        }
-                    />
-                    <Route
-                        path="/project/:id"
-                        element={
-                            <motion.div
-                                variants={variants}
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                                custom={direction}
-                                className={`absolute top-0 left-0 w-full h-full overflow-y-auto`}
-                            >
-                                <ProjectPage />
-                            </motion.div>
-                        }
-                    />
-                </Routes>
-            </AnimatePresence>
-        </div>
+
+        <AnimatePresence mode="sync" initial={true}>
+            <div className='noise'></div>
+            <Routes location={location} key={location.pathname}>
+                <Route
+                    path="/"
+                    element={
+                        <motion.div
+                            variants={variants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            className={`absolute top-0 left-0 w-full h-full overflow-y-auto`}
+                            onScroll={(e) => {
+                                // Guardar la posición del scroll al cambiar de ruta
+                                const scrollTop = e.target.scrollTop;
+                                sessionStorage.setItem("scrollPosition", scrollTop);
+                            }}
+                            id='home'
+                        >
+                            <Home />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/project/:id"
+                    element={
+                        <motion.div
+                            variants={variants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            className={`absolute top-0 left-0 w-full h-full overflow-y-auto`}
+                        >
+                            <ProjectPage />
+                        </motion.div>
+                    }
+                />
+            </Routes>
+        </AnimatePresence>
+
     );
 }
 

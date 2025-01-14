@@ -5,12 +5,15 @@ import Contact from '../components/Contact';
 
 const Home = () => {
     return (
-        <main className='w-[90%] md:w-full max-w-3xl mx-auto my-10 space-y-16 text-lightMode-text dark:text-darkMode-foreground '>
-            <Presentation />
-            <Skills />
-            <Projects />
-            <Contact />
-        </main>
+        <div className='bg-gradient w-full py-10'>
+            <main className='w-[90%] md:w-full max-w-3xl mx-auto space-y-16 text-lightMode-text dark:text-darkMode-foreground '>
+                <Presentation />
+                <Skills />
+                <Projects />
+                <Contact />
+            </main>
+        </div>
+
     );
 };
 
