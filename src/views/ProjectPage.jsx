@@ -38,7 +38,7 @@ const ProjectPage = () => {
     };
 
     return (
-        <div className='bg-gradient w-full py-10'>
+        <div className='bg-gradient w-full pb-10'>
             <main className='w-[90%] md:w-full max-w-3xl mx-auto my-10 space-y-16 text-lightMode-text dark:text-darkMode-foreground pb-10'>
 
 

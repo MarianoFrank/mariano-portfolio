@@ -41,7 +41,7 @@ function RoutesWithAnimation() {
     return (
 
         <AnimatePresence mode="sync" initial={true}>
-            <div className='noise'></div>
+            <div className={`${window.innerWidth <= 640 ? '' : 'noise'}`}></div>
             <Routes location={location} key={location.pathname}>
                 <Route
                     path="/"

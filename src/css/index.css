@@ -74,17 +74,23 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-      circle at 49% 60%,
-      hsla(220, 23%, 94%, 1) 50.039757407711605%,
-      transparent 108.21865249930842%
+  background-color: #eff1f5;
+  background-image: radial-gradient(
+      circle at 25% 6%,
+      hsla(220.00000000000009, 23%, 94%, 1) 18.26472354653501%,
+      transparent 26.886034228471807%
     ),
-    radial-gradient(circle at 0% 0%, hsla(197, 96%, 45%, 1) 0%, transparent 50%),
     radial-gradient(
-      circle at 111% 102%,
-      hsla(197, 96%, 45%, 1) 0%,
-      transparent 48.975780901783246%
+      circle at 59% 21%,
+      hsla(220.00000000000009, 23%, 94%, 1) 4.966820085579406%,
+      transparent 19.497704878557098%
+    ),
+    radial-gradient(
+      circle at 47% 8%,
+      hsla(197.0666666666667, 96%, 45%, 0.8) 16.084318042162103%,
+      transparent 23.647766287730537%
     );
+  background-blend-mode: normal, normal, normal, normal, normal;
   transition: opacity 0.2s ease;
   opacity: 1;
   z-index: -1;
@@ -98,21 +104,33 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-      circle at 49% 60%,
-      hsla(240, 21%, 14%, 1) 50.039757407711605%,
-      transparent 108.21865249930842%
+  background-color: #1e1e2e;
+  background-image: radial-gradient(
+      circle at 35% 7%,
+      hsla(231.8181818181818, 23%, 18%, 1) 15.899795444960931%,
+      transparent 39.193126142484765%
     ),
     radial-gradient(
-      circle at 111% 102%,
-      hsla(189.10714285714286, 100%, 56%, 1) 0%,
-      transparent 48.975780901783246%
+      circle at 0% 62%,
+      hsla(231.00000000000003, 23%, 16%, 1) 10.700669445313919%,
+      transparent 25.719783297431654%
     ),
     radial-gradient(
       circle at 0% 0%,
-      hsla(189, 100%, 56%, 1) 0%,
-      transparent 50%
+      hsla(188.78048780487802, 59%, 72%, 1) 8.523508117734968%,
+      transparent 36.92146917793554%
+    ),
+    radial-gradient(
+      circle at 89% 101%,
+      hsla(231.42857142857144, 23%, 17%, 1) 11.164885487257656%,
+      transparent 29.29968608875629%
+    ),
+    radial-gradient(
+      circle at 105% 83%,
+      hsla(188.78048780487802, 59%, 72%, 1) 3.2359703384132907%,
+      transparent 23.02836877863767%
     );
+  background-blend-mode: normal, normal, normal, normal, normal;
   transition: opacity 0.2s ease;
   opacity: 0;
   z-index: -1;
@@ -124,4 +142,12 @@
 
 .dark .bg-gradient::after {
   opacity: 1;
+}
+
+/* Media query for small devices (sm) */
+@media (max-width: 640px) {
+  .bg-gradient::before,
+  .bg-gradient::after {
+    background-image: none;
+  }
 }
