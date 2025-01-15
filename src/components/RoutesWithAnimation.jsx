@@ -26,7 +26,8 @@ const variants = {
 
 function RoutesWithAnimation() {
     const location = useLocation();
-
+    // Estado para almacenar el ancho de la ventana
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     useEffect(() => {
         const savedScrollPosition = sessionStorage.getItem("scrollPosition");
         if (savedScrollPosition && location.pathname === "/") {
@@ -36,12 +37,25 @@ function RoutesWithAnimation() {
             }
         }
     }, [location]);
+    // Hook para actualizar el ancho de la ventana cuando cambia el tamaño de la pantalla
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
 
+        // Agregar el listener para el cambio de tamaño de la ventana
+        window.addEventListener("resize", handleResize);
+
+        // Limpiar el listener cuando el componente se desmonte
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
 
         <AnimatePresence mode="sync" initial={true}>
-            <div className={`${window.innerWidth <= 640 ? '' : 'noise'}`}></div>
+            {windowWidth > 1024 && <div className="noise"></div>}
             <Routes location={location} key={location.pathname}>
                 <Route
                     path="/"

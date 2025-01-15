@@ -1,6 +1,5 @@
 .swiper-button-next,
 .swiper-button-prev {
-  backdrop-filter: blur(10px);
   padding: 2rem 1.5rem;
   border-radius: 0.5rem;
 }
