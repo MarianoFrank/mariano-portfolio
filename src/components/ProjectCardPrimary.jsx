@@ -15,7 +15,6 @@ Este componente recibe un objeto project con la siguiente estructura:
 */
 
 const ProjectCardPrimary = ({ project, colors, inverted = false }) => {
-    const miniature = project.content.filter(entry => entry.miniature === true)[0].images[0];
 
     const { darkMode } = useDarkMode();
     const navigate = useNavigate();
@@ -30,7 +29,8 @@ const ProjectCardPrimary = ({ project, colors, inverted = false }) => {
                 }}
 
                 className={`overflow-hidden rounded-xl min-w-fit min-h-fit`}>
-                <Picture className={`block w-full md:w-80 h-auto md:h-[12rem]  transition-all duration-200 ease-out rounded-xl relative z-10 sm:left-0 sm:top-0 ${hoverCard ? 'md:left-0 md:top-0' : `md:top-10 ${inverted ? "md:left-10" : "md:-left-10"}`}  `} imageName={`/${project.id}/${miniature}`} />
+                <Picture className={`block w-full md:w-80 h-auto md:h-[12rem]  transition-all duration-200 ease-out rounded-xl relative z-10 sm:left-0 sm:top-0 ${hoverCard ? 'md:left-0 md:top-0' : `md:top-10 ${inverted ? "md:left-10" : "md:-left-10"}`}  `}
+                    imageName={`/${project.id}/miniature`} />
             </div>
             <div className="grid grid-cols-1 gap-4 min-h-full">
                 <div className="space-y-6">

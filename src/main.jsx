@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router";
 import RoutesWithAnimation from "./components/RoutesWithAnimation";
 
 import "./css/index.css";
-import 'tippy.js/dist/tippy.css';
 import "./css/normalize.css";
 
 

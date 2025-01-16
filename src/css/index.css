@@ -76,19 +76,19 @@
   bottom: 0;
   background-color: #eff1f5;
   background-image: radial-gradient(
-      circle at 64% -4%,
-      hsla(220.00000000000009, 23%, 94%, 1) 18.26472354653501%,
-      transparent 28.38304503228781%
+      circle at 35% 7%,
+      hsla(220.00000000000009, 23%, 94%, 1) 15.899795444960931%,
+      transparent 39.193126142484765%
     ),
     radial-gradient(
-      circle at 102% 45%,
-      hsla(220.00000000000009, 23%, 94%, 1) 16.398525231799287%,
-      transparent 27.678203922697598%
+      circle at 0% 62%,
+      hsla(220.00000000000009, 23%, 94%, 1) 10.700669445313919%,
+      transparent 25.719783297431654%
     ),
     radial-gradient(
-      circle at 80% 0%,
-      hsla(197.0666666666667, 96%, 45%, 0.72) 17.537293215096117%,
-      transparent 23.780381029187094%
+      circle at 0% 0%,
+      hsla(197.0666666666667, 96%, 45%, 1) 8.523508117734968%,
+      transparent 36.92146917793554%
     );
   background-blend-mode: normal, normal, normal, normal, normal;
   transition: opacity 0.2s ease;

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router';
 
 import projects from '../data/projects';
@@ -10,11 +10,14 @@ import { useNavigate } from "react-router";
 import SectionHeader from '../components/SectionHeader';
 import Tooltip from '../components/Tooltip';
 
+//Lightbox
+import Lightbox from "yet-another-react-lightbox";
+import { Zoom } from "yet-another-react-lightbox/plugins";
+import "yet-another-react-lightbox/styles.css";
+
 //Swiper
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -25,7 +28,7 @@ const ProjectPage = () => {
 
     const project = projects.filter(project => project.id === id)[0];
 
-    const { primaryColor, secundaryColor } = useColor("special");
+    const { primaryColor } = useColor("special");
 
     const { toggleDarkMode } = useDarkMode();
 
@@ -35,6 +38,28 @@ const ProjectPage = () => {
     const swiperStyles = {
         '--swiper-navigation-color': primaryColor,
         '--swiper-pagination-color': primaryColor
+    };
+
+    //Lightbox
+    const [open, setOpen] = useState(false);
+    const [index, setIndex] = useState(0);
+
+    const imagesArray =
+        project.content.flatMap((entry) =>
+            entry.images ? entry.images.map((image, index) => ({
+                src: `/images/${project.id}/${image}.jpeg`,
+                index,
+                name: image
+            })) : []
+        );
+
+
+    const handleClickImage = (name) => {
+        const { index } = imagesArray.find(item => item.name === name);
+        if (index) {
+            setIndex(index);
+        }
+        setOpen(true);
     };
 
     return (
@@ -106,20 +131,22 @@ const ProjectPage = () => {
                                         }}
                                         speed={200}
                                         loop={entry.images && entry.images.length > 1 ? true : false}
+
                                     >
                                         {entry.images && entry.images.map((image, index) => {
+
                                             return (
                                                 <SwiperSlide className='py-8' key={`${image}-${index}`}>
-                                                    <a className="rounded-lg" href={`/images/${project.id}/${image}.jpeg`} target="_blank" rel="noreferrer">
+                                                    <div onClick={() => handleClickImage(image)} className='cursor-pointer'>
                                                         <Picture className={'rounded-lg'} imageName={`/${project.id}/${image}`} alt={`Image for ${project.name}`} />
-                                                    </a>
+                                                    </div>
                                                 </SwiperSlide>
                                             );
                                         })}
                                     </Swiper>
 
                                     <p className={`${!entry.images ? 'mt-0' : 'mt-4'}`}>{entry.text}</p>
-                                </div>
+                                </div> // gallery
                             );
                         })}
 
@@ -131,6 +158,16 @@ const ProjectPage = () => {
                     <Button onClick={() => navigate("/")} icon="arrow-left" text="Volver" buttonType="normal" invertIcon={true} />
                 </div>
             </main >
+            <Lightbox
+                open={open}
+                close={() => setOpen(false)}
+                slides={imagesArray}
+                index={index}
+                animation={{
+                    fade: 500
+                }}
+                plugins={[Zoom]}
+            />
         </div >
     );
 };

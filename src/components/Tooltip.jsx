@@ -28,7 +28,7 @@ const Tooltip = ({ children, content }) => {
             <p
                 ref={refs.setFloating}
                 // style={floatingStyles}
-                className={`whitespace-nowrap absolute text-sm rounded-md px-2 py-1 z-50 transition-all duration-300
+                className={`pointer-events-none whitespace-nowrap absolute text-sm rounded-md px-2 py-1 z-50 transition-all duration-300
                     -top-4   
                     left-1/2 -translate-x-1/2
                         ${isOpen ? 'bg-opacity-60 -translate-y-5 backdrop-blur-sm' : 'opacity-0'}
