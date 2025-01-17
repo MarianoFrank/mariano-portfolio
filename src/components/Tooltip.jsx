@@ -31,7 +31,7 @@ const Tooltip = ({ children, content }) => {
                 className={`pointer-events-none whitespace-nowrap absolute text-sm rounded-md px-2 py-1 z-50 transition-all duration-300
                     -top-4   
                     left-1/2 -translate-x-1/2
-                        ${isOpen ? 'bg-opacity-60 -translate-y-5 backdrop-blur-sm' : 'opacity-0'}
+                        ${isOpen ? 'bg-opacity-60 -translate-y-5 backdrop-blur-[2px]' : 'opacity-0'}
                         ${darkMode ?
                         'bg-darkMode-bg text-darkMode-text border border-[#45475a] shadow-lg'
                         : 'bg-lightMode-bg text-lightMode-text border border-[#bcc0cc] shadow-sm'}

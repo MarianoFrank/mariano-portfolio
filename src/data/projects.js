@@ -3,8 +3,8 @@ const projects = [
         id: 'devjobs',
         name: 'DevJobs',
         colors: {
-            light: '#5B9077',
-            dark: '#5B9077'
+            light: 'rgba(255, 0, 0, 0.5)',
+            dark: 'rgba(255, 0, 0, 0.1)'
         },
         resume: 'Plataforma de e-commerce, experiencia de compra intuitiva y diseño elegante.',
         introduction: 'Lorem ipsum <strong>dolor</strong>  sit amet, consectetur adipiscing elit. Aliquam sed lorem at metus finibus molestie. Nullam ullamcorper varius aliquet. Duis et ornare metus. Fusce urna erat, pretium nec vestibulum sagittis, finibus in nulla. Mauris blandit tincidunt tempus. Mauris euismod est in ullamcorper lacinia. Donec auctor felis augue, ac aliquam enim feugiat id. Nulla vestibulum, nunc id condimentum sodales, neque nisi vehicula urna, eget semper urna sapien in risus. ',
@@ -66,8 +66,8 @@ const projects = [
         id: 'devstagram',
         name: 'Devstagram',
         colors: {
-            light: '#BF3648',
-            dark: '#BF3648'
+            light: 'rgba(255, 235, 0, 0.5)',
+            dark: 'rgba(255, 235, 0, 0.1)'
         },
         resume: 'Plataforma de e-commerce, experiencia de compra intuitiva y diseño elegante.',
         introduction: `

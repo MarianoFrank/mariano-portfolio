@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import RoutesWithAnimation from "./components/RoutesWithAnimation";
+import Picture from "./components/Picture";
 
 import "./css/index.css";
 import "./css/normalize.css";
@@ -18,6 +19,7 @@ ReactDOM.createRoot(root).render(
 
   <BrowserRouter>
     <DarkModeProvider>
+
       <RoutesWithAnimation />
     </DarkModeProvider>
   </BrowserRouter>

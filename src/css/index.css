@@ -54,7 +54,8 @@
   height: 100%;
   pointer-events: none;
   z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1400 1400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  /* background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1400 1400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); */
+  background-image: url("../../public/images/noise.svg");
   opacity: 0.8;
   mix-blend-mode: overlay;
   background-blend-mode: overlay, normal, normal, normal;
@@ -75,22 +76,7 @@
   right: 0;
   bottom: 0;
   background-color: #eff1f5;
-  background-image: radial-gradient(
-      circle at 35% 7%,
-      hsla(220.00000000000009, 23%, 94%, 1) 15.899795444960931%,
-      transparent 39.193126142484765%
-    ),
-    radial-gradient(
-      circle at 0% 62%,
-      hsla(220.00000000000009, 23%, 94%, 1) 10.700669445313919%,
-      transparent 25.719783297431654%
-    ),
-    radial-gradient(
-      circle at 0% 0%,
-      hsla(197.0666666666667, 96%, 45%, 1) 8.523508117734968%,
-      transparent 36.92146917793554%
-    );
-  background-blend-mode: normal, normal, normal, normal, normal;
+
   transition: opacity 0.2s ease;
   opacity: 1;
   z-index: -1;
@@ -105,22 +91,7 @@
   right: 0;
   bottom: 0;
   background-color: #1e1e2e;
-  background-image: radial-gradient(
-      circle at 35% 7%,
-      hsla(231.8181818181818, 23%, 18%, 1) 15.899795444960931%,
-      transparent 39.193126142484765%
-    ),
-    radial-gradient(
-      circle at 0% 62%,
-      hsla(231.00000000000003, 23%, 16%, 1) 10.700669445313919%,
-      transparent 25.719783297431654%
-    ),
-    radial-gradient(
-      circle at 0% 0%,
-      hsla(188.78048780487802, 59%, 72%, 1) 8.523508117734968%,
-      transparent 36.92146917793554%
-    );
-  background-blend-mode: normal, normal, normal, normal, normal;
+
   transition: opacity 0.2s ease;
   opacity: 0;
   z-index: -1;

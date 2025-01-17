@@ -21,7 +21,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import '../css/swiper.css'; ``
+
 
 const ProjectPage = () => {
     const { id } = useParams();
@@ -63,8 +63,8 @@ const ProjectPage = () => {
     };
 
     return (
-        <div className='bg-gradient w-full pb-10'>
-            <main className='w-[90%] md:w-full max-w-3xl mx-auto my-10 space-y-16 text-lightMode-text dark:text-darkMode-foreground pb-10'>
+        <div className='bg-gradient w-full py-14'>
+            <main className='w-[90%] md:w-full max-w-3xl mx-auto  space-y-16 text-lightMode-text dark:text-darkMode-foreground pb-10'>
 
 
                 <header className='space-y-6 mb-5'>

@@ -25,7 +25,8 @@ const ProjectCardPrimary = ({ project, colors, inverted = false }) => {
         <div className={`flex mb-10 flex-col md:flex-row justify-betweens gap-4 ${inverted ? "md:flex-row-reverse" : ''}`} onMouseEnter={() => setHoverCard(true)} onMouseLeave={() => setHoverCard(false)}>
             <div
                 style={{
-                    backgroundColor: darkMode ? colors.dark : colors.light
+                    backgroundColor: darkMode ? colors.dark : colors.light,
+                    // backdropFilter: 'blur(1px)',
                 }}
 
                 className={`overflow-hidden rounded-xl min-w-fit min-h-fit`}>
