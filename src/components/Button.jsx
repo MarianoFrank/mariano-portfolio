@@ -20,8 +20,9 @@ const Button = forwardRef(
         const [isHovered, setIsHovered] = useState(false);
         const handleClick = () => {
             setIsClicked(true);
-            if (onClick) onClick();
+
             setTimeout(() => {
+                if (onClick) onClick();
                 setIsClicked(false);
             }, 180);
         };

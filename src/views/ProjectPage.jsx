@@ -89,29 +89,23 @@ const ProjectPage = () => {
                     <div className='space-y-6'>
                         <p>{t("Here is a video of", "A continuación, te presento un video de")} <span className='font-bold'>{`${project.name}`}</span> {t("so you can better understand how it works", "para que puedas conocer mejor su funcionamiento.")}</p>
 
-                        {project.videos && project.videos
-                            .filter(video => {
-                                return !(
-                                    (video?.includes('english') && getCurrentLanguage() === 'es') ||
-                                    (video?.includes('spanish') && getCurrentLanguage() === 'en')
-                                );
-                            })
-                            .map((video) => {
-                                return (
-                                    <div className='shadow-none w-fit h-fit overflow-hidden rounded-xl border-2 border-opacity-20 border-darkMode-primary_light dark:border-opacity-20'>
-                                        <video
-                                            controls
-                                            controlsList="nodownload noremoteplayback"
-                                            preload="auto"
-                                            poster={`/media/${project.id}/poster.jpg`}
-                                            key={video}
-                                        >
-                                            <source src={`/media/${project.id}/${video}.mp4`} type="video/mp4" className='border-none' />
-                                            {t("Your browser does not support the video tag", "Tu navegador no soporta la etiqueta de video")}
-                                        </video>
-                                    </div>
-                                );
-                            })}
+                        {project.videos && (() => {
+                            const currentLang = getCurrentLanguage(); // 'en' o 'es'
+                            const videoUrl = currentLang === 'es' ? project.videos.spanish : project.videos.english;
+
+                            return (
+                                <div className="shadow-none w-full overflow-hidden rounded-xl border-2 border-opacity-20 border-darkMode-primary_light dark:border-opacity-20">
+                                    <iframe
+                                        className="w-full min-h-96"
+                                        src={videoUrl.replace("youtu.be/", "www.youtube.com/embed/")}
+                                        title="Project video"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    />
+                                </div>
+                            );
+                        })()}
 
                         <div>
                             <Button onClick={() => navigate("/")} icon="arrow-left" text={t("Back", "Volver")} buttonType="normal" invertIcon={true} />

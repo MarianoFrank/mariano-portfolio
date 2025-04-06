@@ -6,8 +6,8 @@ import ProjectPage from '../views/ProjectPage';
 
 const pageTransition = {
     type: "tween",
-    duration: 0.7,
-    ease: "easeInOut",
+    duration: 0.5,
+    ease: "ease",
 };
 
 const variants = {

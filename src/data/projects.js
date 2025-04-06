@@ -44,7 +44,10 @@ const projects = [
               </ul>
             `
         },
-        videos: ['freshcoffe_explain_english_compressed', 'freshcoffe_explain_spanish_compressed'],
+        videos: {
+            english: "https://youtu.be/4b4nUl5bJt8",
+            spanish: " "
+        },
         technologies: [
             {
                 name: 'Laravel',
@@ -118,7 +121,10 @@ const projects = [
               </ul>
             `
         },
-        videos: ['devjobs_explain_english_compressed', 'devjobs_explain_spanish_compressed'],
+        videos: {
+            english: "https://youtu.be/47qF0K4DdIg",
+            spanish: "https://youtu.be/91utM-Hh19g"
+        },
         technologies: [
             {
                 name: 'Laravel',
@@ -198,7 +204,10 @@ const projects = [
               </ul>
             `
         },
-        videos: ['devstagram_explain_spanish_compressed', 'devstagram_explain_english_compressed'],
+        videos: {
+            english: "https://youtu.be/NJnSzIRf2xk",
+            spanish: "https://youtu.be/rCiPudpIyEs"
+        },
         technologies: [
             {
                 name: 'Laravel',
@@ -270,7 +279,10 @@ const projects = [
                       </ul>
             `
         },
-        videos: ['meeti_explain_spanish_compressed', 'meeti_explain_english_compressed'],
+        videos: {
+            english: "https://youtu.be/Y0TibdNadFk",
+            spanish: "https://youtu.be/v1X4tdehKWo"
+        },
         technologies: [
             {
                 name: 'NodeJs',
