@@ -98,17 +98,18 @@ const ProjectPage = () => {
                             })
                             .map((video) => {
                                 return (
-                                    <video
-                                        className='shadow-none w-fit h-fit overflow-hidden rounded-xl border-2 border-opacity-20 border-darkMode-primary_light dark:border-opacity-20'
-                                        controls
-                                        controlsList="nodownload noremoteplayback"
-                                        preload="auto"
-                                        poster={`/media/${project.id}/poster.jpg`}
-                                        key={video}
-                                    >
-                                        <source src={`/media/${project.id}/${video}.mp4`} type="video/mp4" className='border-none' />
-                                        {t("Your browser does not support the video tag", "Tu navegador no soporta la etiqueta de video")}
-                                    </video>
+                                    <div className='shadow-none w-fit h-fit overflow-hidden rounded-xl border-2 border-opacity-20 border-darkMode-primary_light dark:border-opacity-20'>
+                                        <video
+                                            controls
+                                            controlsList="nodownload noremoteplayback"
+                                            preload="auto"
+                                            poster={`/media/${project.id}/poster.jpg`}
+                                            key={video}
+                                        >
+                                            <source src={`/media/${project.id}/${video}.mp4`} type="video/mp4" className='border-none' />
+                                            {t("Your browser does not support the video tag", "Tu navegador no soporta la etiqueta de video")}
+                                        </video>
+                                    </div>
                                 );
                             })}
 

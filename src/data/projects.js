@@ -4,7 +4,6 @@ import { techIcons } from "./tech_icons";
 -La imagen siempre debe ser un array aunque sea una solas.
 
 -Resoluciones que me parecen adecuadas:
-    -Imagenes y videos: 1600x900 
     -Miniaturas: 640x360
 
 El unico color que no respeto de la paleta catppuccin Latte es el amarillo en su lugar uso el de Frappé
@@ -119,7 +118,7 @@ const projects = [
               </ul>
             `
         },
-        content: [],
+        videos: ['devjobs_explain_english_compressed', 'devjobs_explain_spanish_compressed'],
         technologies: [
             {
                 name: 'Laravel',
@@ -199,7 +198,7 @@ const projects = [
               </ul>
             `
         },
-        content: [],
+        videos: ['devstagram_explain_spanish_compressed', 'devstagram_explain_english_compressed'],
         technologies: [
             {
                 name: 'Laravel',
@@ -271,7 +270,7 @@ const projects = [
                       </ul>
             `
         },
-        content: [],
+        videos: ['meeti_explain_spanish_compressed', 'meeti_explain_english_compressed'],
         technologies: [
             {
                 name: 'NodeJs',
