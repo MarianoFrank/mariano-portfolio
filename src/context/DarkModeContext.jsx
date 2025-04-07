@@ -10,14 +10,16 @@ export const useDarkMode = () => {
 
 // DarkModeProvider component
 export const DarkModeProvider = ({ children }) => {
-    const [darkMode, setDarkMode] = useState(false);
-
-    useEffect(() => {
+    const [darkMode, setDarkMode] = useState(() => {
         const savedMode = localStorage.getItem('darkMode');
-        if (savedMode) {
-            setDarkMode(JSON.parse(savedMode));
+        if (savedMode !== null) {
+            return JSON.parse(savedMode);
+        } else {
+            // Detectar si el usuario prefiere modo oscuro
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         }
-    }, []);
+    });
+
 
     useEffect(() => {
         localStorage.setItem('darkMode', JSON.stringify(darkMode));

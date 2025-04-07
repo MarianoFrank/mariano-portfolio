@@ -1,5 +1,5 @@
 const getImageSrcSet = (imageName) => {
-    const base = `/media`;
+    const base = import.meta.env.BASE_URL + `media`;
     return {
         avif: `${base}${imageName}.avif`,
         webp: `${base}${imageName}.webp`,

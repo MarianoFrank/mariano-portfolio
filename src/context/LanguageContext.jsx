@@ -2,9 +2,15 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 
 const LanguageContext = createContext();
 
-const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
+const detectBrowserLanguage = () => {
+    const browserLang = navigator.language || navigator.userLanguage;
+    return browserLang.startsWith('es') ? 'es' : 'en';
+};
 
+const LanguageProvider = ({ children }) => {
+    const [language, setLanguage] = useState(() => {
+        return localStorage.getItem('language') || detectBrowserLanguage();
+    });
     useEffect(() => {
         localStorage.setItem('language', language);
     }, [language]);
