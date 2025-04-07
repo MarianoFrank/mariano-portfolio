@@ -2,7 +2,16 @@
   "name": "my-porfolio",
   "private": true,
   "version": "0.0.1",
-  "homepage": "https://marianofrank.github.io",
+  "homepage": "https://marianofrank.github.io/mariano-portfolio",
+  "description": "My portfolio website",
+  "author": "Mariano Frank",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "website",
+    "react",
+    "vite"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
