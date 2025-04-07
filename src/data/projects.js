@@ -46,7 +46,7 @@ const projects = [
         },
         videos: {
             english: "https://youtu.be/4b4nUl5bJt8",
-            spanish: " "
+            spanish: "https://youtu.be/UpD1FnG4FLA"
         },
         technologies: [
             {
