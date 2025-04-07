@@ -16,7 +16,7 @@ const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
 
-  <BrowserRouter>
+  <BrowserRouter basename="/mariano-portfolio">
     <LanguageProvider>
       <DarkModeProvider>
         <RoutesWithAnimation />
