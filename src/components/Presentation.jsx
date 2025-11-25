@@ -16,7 +16,7 @@ const Presentation = () => {
 
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = '/pdf/cv.pdf';
+        link.href = 'public/pdf/cv.pdf';
         link.download = 'CV_Frank_Mariano.pdf';
         link.click();
     };
