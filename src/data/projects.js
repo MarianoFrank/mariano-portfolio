@@ -60,7 +60,7 @@ const projects = [
             {
                 name: 'React',
                 description: {
-                    es: 'para elfrontend',
+                    es: 'para el frontend',
                     en: 'for the frontend'
                 },
                 icon: techIcons.react,
