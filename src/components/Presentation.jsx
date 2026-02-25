@@ -52,8 +52,8 @@ const Presentation = () => {
         />
 
         <p>
-            {t("👨💻 Full Stack Developer & Systems Engineering student Argentine 🇦🇷 I'm actively looking for a job opportunity where I can contribute my knowledge in Laravel 🛠️ and React ⚛️, and continue growing as a developer. I have experience building robust backends and creating dynamic interfaces. I am interested in being part of a team where I can learn, develop scalable solutions, and take on new challenges 🚀. Ready to work and eager to contribute.",
-                "👨💻 Desarrollador Full Stack | Estudiante de Ingeniería en Sistemas de Argentina 🇦🇷 Estoy buscando activamente una oportunidad laboral donde pueda aportar mis conocimientos en Laravel 🛠️ y React ⚛️, y seguir creciendo como desarrollador. Tengo experiencia construyendo backends robustos y creando interfaces dinámicas. Me interesa formar parte de un equipo donde pueda aprender, desarrollar soluciones escalables y asumir nuevos desafíos 🚀. Listo para trabajar y con muchas ganas de aportar.")}
+            {t("👨💻 Full Stack Developer & Systems Engineering student Argentine 🇦🇷 I'm actively looking for a job opportunity where I can contribute my knowledge, and continue growing as a developer. I have experience building robust backends and creating dynamic interfaces. I am interested in being part of a team where I can learn, develop scalable solutions, and take on new challenges 🚀. Ready to work and eager to contribute.",
+                "👨💻 Desarrollador Full Stack | Estudiante de Ingeniería en Sistemas de Argentina 🇦🇷 Estoy buscando activamente una oportunidad laboral donde pueda aportar mis conocimientos, y seguir creciendo como desarrollador. Tengo experiencia construyendo backends robustos y creando interfaces dinámicas. Me interesa formar parte de un equipo donde pueda aprender, desarrollar soluciones escalables y asumir nuevos desafíos 🚀. Listo para trabajar y con muchas ganas de aportar.")}
         </p>
 
 
